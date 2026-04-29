@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Well-Known Ports Reference</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #f5f4f0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: #1a1a1a;
+    padding: 48px 24px 80px;
+  }
+
+  .wrap { max-width: 1020px; margin: 0 auto; }
+
+  /* Header */
+  header { border-bottom: 2px solid #1a1a1a; padding-bottom: 20px; margin-bottom: 28px; }
+  header p { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: #888; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 8px; }
+  header h1 { font-size: 1.9rem; font-weight: 600; margin-bottom: 6px; }
+  header small { color: #555; font-size: .88rem; }
+
+  /* Table */
+  .box { border: 1px solid #d0cfc9; border-radius: 8px; overflow: hidden; background: #fff; }
+
+  table { width: 100%; border-collapse: collapse; font-size: .86rem; }
+
+  thead { background: #f0efe9; }
+  th { padding: 11px 16px; text-align: left; font-family: 'IBM Plex Mono', monospace; font-size: .65rem; letter-spacing: .08em; text-transform: uppercase; color: #888; font-weight: 400; }
+
+  td { padding: 12px 16px; border-top: 1px solid #ebe9e3; vertical-align: middle; }
+  tr:nth-child(even) td { background: #faf9f6; }
+
+  /* Cells */
+  .port { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: .82rem; }
+  .svc  { font-weight: 600; }
+  .full { font-size: .72rem; color: #999; margin-top: 2px; }
+  .use  { color: #444; font-size: .81rem; line-height: 1.5; }
+
+  /* Badges */
+  span {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: .7rem;
+    font-weight: 600;
+    font-family: 'IBM Plex Mono', monospace;
+    border: 1px solid transparent;
+  }
+
+  .tcp  { background: #e8f0fe; color: #3a5fc8; }
+  .udp  { background: #fef3e2; color: #b56a00; }
+  .both { background: #f0ece8; color: #6b4d30; }
+
+  .web    { background: #e6f4ea; color: #2d7a3f; border-color: #c3e6cb; font-family: inherit; font-weight: 500; }
+  .mail   { background: #fff0e6; color: #a0400a; border-color: #fcd3b0; font-family: inherit; font-weight: 500; }
+  .file   { background: #e8f0fe; color: #2a50b0; border-color: #c5d5f8; font-family: inherit; font-weight: 500; }
+  .remote { background: #f3e8fd; color: #6b30a8; border-color: #dfc5f8; font-family: inherit; font-weight: 500; }
+  .dns    { background: #e6f7ff; color: #1a6e9c; border-color: #b8e3f5; font-family: inherit; font-weight: 500; }
+  .net    { background: #f0f0ee; color: #4a4a40; border-color: #d5d4cc; font-family: inherit; font-weight: 500; }
+  .db     { background: #fde8e8; color: #a02828; border-color: #f8c5c5; font-family: inherit; font-weight: 500; }
+  .sec    { background: #e8f5e9; color: #276038; border-color: #b8dfc0; font-family: inherit; font-weight: 500; }
+
+  footer { margin-top: 24px; display: flex; justify-content: space-between; }
+  footer span { font-family: 'IBM Plex Mono', monospace; font-size: .7rem; color: #aaa; }
+
+  .author { margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: .78rem; color: #555; }
+  .author strong { color: #1a1a1a; }
+
+  @media(max-width:700px) { th:nth-child(4),td:nth-child(4) { display:none } }
+  @media(max-width:520px) { th:nth-child(3),td:nth-child(3) { display:none } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <p>Network Reference · IANA 0–1023</p>
+  <h1>Well-Known Ports</h1>
+  <small>25 ports — service name, transport protocol, and usage.</small>
+  <div class="author"><strong>Eng. Mohamed Ibrahim Eissa</strong> &nbsp;·&nbsp; ID: 1221253</div>
+</header>
+
+<div class="box">
+<table>
+  <thead>
+    <tr>
+      <th>Port</th>
+      <th>Service</th>
+      <th>Protocol</th>
+      <th>Category</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><div class="port">20 / 21</div></td><td><div class="svc">FTP</div><div class="full">File Transfer Protocol</div></td><td><span class="tcp">TCP</span></td><td><span class="file">File Transfer</span></td><td><div class="use">Port 20 carries data; port 21 handles control commands. Used for transferring files between client and server.</div></td></tr>
+    <tr><td><div class="port">22</div></td><td><div class="svc">SSH</div><div class="full">Secure Shell</div></td><td><span class="tcp">TCP</span></td><td><span class="remote">Remote Access</span></td><td><div class="use">Encrypted remote login and command execution. Replaced Telnet as the standard for secure remote administration.</div></td></tr>
+    <tr><td><div class="port">23</div></td><td><div class="svc">Telnet</div><div class="full">Terminal Network</div></td><td><span class="tcp">TCP</span></td><td><span class="remote">Remote Access</span></td><td><div class="use">Unencrypted remote terminal access. Considered insecure and largely replaced by SSH; still used on legacy devices.</div></td></tr>
+    <tr><td><div class="port">25</div></td><td><div class="svc">SMTP</div><div class="full">Simple Mail Transfer Protocol</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Core protocol for sending email between mail servers. Used by mail clients to submit outgoing mail to a relay server.</div></td></tr>
+    <tr><td><div class="port">53</div></td><td><div class="svc">DNS</div><div class="full">Domain Name System</div></td><td><span class="both">TCP / UDP</span></td><td><span class="dns">DNS</span></td><td><div class="use">Resolves domain names to IP addresses. UDP for standard queries; TCP for large responses and zone transfers.</div></td></tr>
+    <tr><td><div class="port">67 / 68</div></td><td><div class="svc">DHCP</div><div class="full">Dynamic Host Config Protocol</div></td><td><span class="udp">UDP</span></td><td><span class="net">Network</span></td><td><div class="use">67 is server; 68 is client. Automatically assigns IP addresses, gateways, and DNS servers to network devices.</div></td></tr>
+    <tr><td><div class="port">69</div></td><td><div class="svc">TFTP</div><div class="full">Trivial File Transfer Protocol</div></td><td><span class="udp">UDP</span></td><td><span class="file">File Transfer</span></td><td><div class="use">Simple file transfer with no authentication. Used for PXE booting and uploading firmware to network devices.</div></td></tr>
+    <tr><td><div class="port">80</div></td><td><div class="svc">HTTP</div><div class="full">HyperText Transfer Protocol</div></td><td><span class="tcp">TCP</span></td><td><span class="web">Web</span></td><td><div class="use">Foundation of data communication on the web. Browsers use it to request and receive web pages from servers.</div></td></tr>
+    <tr><td><div class="port">110</div></td><td><div class="svc">POP3</div><div class="full">Post Office Protocol v3</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Downloads email from server to local client and typically deletes it from the server. Single-device email retrieval.</div></td></tr>
+    <tr><td><div class="port">119</div></td><td><div class="svc">NNTP</div><div class="full">Network News Transfer Protocol</div></td><td><span class="tcp">TCP</span></td><td><span class="net">Network</span></td><td><div class="use">Used for reading and posting Usenet news articles. Transfers messages between servers and reader clients.</div></td></tr>
+    <tr><td><div class="port">123</div></td><td><div class="svc">NTP</div><div class="full">Network Time Protocol</div></td><td><span class="udp">UDP</span></td><td><span class="net">Network</span></td><td><div class="use">Synchronizes clocks of computers over a network. Critical for security, logging, and distributed systems.</div></td></tr>
+    <tr><td><div class="port">143</div></td><td><div class="svc">IMAP</div><div class="full">Internet Message Access Protocol</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Retrieves email while keeping messages on the server, enabling multi-device access with folder and flag support.</div></td></tr>
+    <tr><td><div class="port">161 / 162</div></td><td><div class="svc">SNMP</div><div class="full">Simple Network Management Protocol</div></td><td><span class="udp">UDP</span></td><td><span class="net">Network</span></td><td><div class="use">161 polls managed devices; 162 receives traps (alerts). Monitors routers, switches, and servers.</div></td></tr>
+    <tr><td><div class="port">389</div></td><td><div class="svc">LDAP</div><div class="full">Lightweight Directory Access Protocol</div></td><td><span class="both">TCP / UDP</span></td><td><span class="net">Network</span></td><td><div class="use">Accesses distributed directory services. Used for centralized authentication (Active Directory) and user management.</div></td></tr>
+    <tr><td><div class="port">443</div></td><td><div class="svc">HTTPS</div><div class="full">HTTP over TLS/SSL</div></td><td><span class="tcp">TCP</span></td><td><span class="web">Web</span></td><td><div class="use">Encrypted web traffic using TLS. Standard for all secure websites; protects data between browsers and servers.</div></td></tr>
+    <tr><td><div class="port">445</div></td><td><div class="svc">SMB</div><div class="full">Server Message Block</div></td><td><span class="tcp">TCP</span></td><td><span class="file">File Transfer</span></td><td><div class="use">Windows file and printer sharing. Enables reading and writing files on a remote server; used in NAS and Active Directory.</div></td></tr>
+    <tr><td><div class="port">465</div></td><td><div class="svc">SMTPS</div><div class="full">SMTP over SSL</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Encrypted SMTP using implicit TLS from the start of the connection. Used for secure email submission.</div></td></tr>
+    <tr><td><div class="port">514</div></td><td><div class="svc">Syslog</div><div class="full">System Logging Protocol</div></td><td><span class="udp">UDP</span></td><td><span class="net">Network</span></td><td><div class="use">Sends system event logs to a central log server. Used for monitoring, auditing, and troubleshooting.</div></td></tr>
+    <tr><td><div class="port">587</div></td><td><div class="svc">SMTP Submission</div><div class="full">Mail Submission Agent</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Modern standard for sending email from clients. Requires authentication and uses STARTTLS. Preferred over port 25.</div></td></tr>
+    <tr><td><div class="port">636</div></td><td><div class="svc">LDAPS</div><div class="full">LDAP over SSL</div></td><td><span class="tcp">TCP</span></td><td><span class="sec">Security</span></td><td><div class="use">Secure LDAP with TLS encryption. Used for encrypted directory queries and authentication in enterprise environments.</div></td></tr>
+    <tr><td><div class="port">853</div></td><td><div class="svc">DNS over TLS</div><div class="full">DoT</div></td><td><span class="tcp">TCP</span></td><td><span class="sec">Security</span></td><td><div class="use">Encrypts DNS queries using TLS to prevent eavesdropping. Improves privacy over standard DNS on port 53.</div></td></tr>
+    <tr><td><div class="port">993</div></td><td><div class="svc">IMAPS</div><div class="full">IMAP over SSL</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Encrypted IMAP using TLS. Secure email access keeping messages on the server and synced across multiple devices.</div></td></tr>
+    <tr><td><div class="port">995</div></td><td><div class="svc">POP3S</div><div class="full">POP3 over SSL</div></td><td><span class="tcp">TCP</span></td><td><span class="mail">Mail</span></td><td><div class="use">Secure POP3 with TLS encryption. Protects credentials and email content during retrieval from mail servers.</div></td></tr>
+    <tr><td><div class="port">3306</div></td><td><div class="svc">MySQL</div><div class="full">MySQL / MariaDB</div></td><td><span class="tcp">TCP</span></td><td><span class="db">Database</span></td><td><div class="use">Default port for MySQL and MariaDB connections. Applications connect here to execute queries and manage data.</div></td></tr>
+    <tr><td><div class="port">5432</div></td><td><div class="svc">PostgreSQL</div><div class="full">Postgres Database</div></td><td><span class="tcp">TCP</span></td><td><span class="db">Database</span></td><td><div class="use">Default port for PostgreSQL connections. Used by applications, ORMs, and tools to connect to Postgres instances.</div></td></tr>
+  </tbody>
+</table>
+</div>
+
+<footer>
+  <span>Well-Known Ports — IANA 0–1023</span>
+  <span>Internet Assigned Numbers Authority</span>
+</footer>
+
+</div>
+</body>
+</html>
